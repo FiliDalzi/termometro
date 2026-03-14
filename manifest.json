@@ -1,0 +1,35 @@
+{
+  "name": "Termometro Live",
+  "short_name": "Termometro",
+  "description": "Temperatura in tempo reale nella tua posizione",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f0f14",
+  "theme_color": "#3c1f5e",
+  "lang": "it",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["weather", "utilities"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Aggiorna Temperatura",
+      "short_name": "Aggiorna",
+      "description": "Aggiorna la temperatura attuale",
+      "url": "./index.html"
+    }
+  ]
+}

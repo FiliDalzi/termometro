@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Termometro Live</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#3c1f5e">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Termometro">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+
+  <header>
+    <div class="location-info">
+      <span class="location-icon">📍</span>
+      <span id="location-name">Localizzazione in corso…</span>
+    </div>
+    <div class="meta-info">
+      <span id="feels-like"></span>
+      <span id="humidity"></span>
+      <span id="wind"></span>
+    </div>
+  </header>
+
+  <main>
+    <label for="thermometer-slider" data-bg="95">0°C</label>
+    <div class="thermometer">
+      <input type="range" class="thermometer-slider" id="thermometer-slider"
+             min="-40" max="50" list="temperatures" value="0">
+      <div class="glass"></div>
+      <datalist id="temperatures">
+        <option value="-40" label="-40°C"></option>
+        <option value="-30" label="-30°C"></option>
+        <option value="-20" label="-20°C"></option>
+        <option value="-10" label="-10°C"></option>
+        <option value="0" label="0°C"></option>
+        <option value="10" label="10°C"></option>
+        <option value="20" label="20°C"></option>
+        <option value="30" label="30°C"></option>
+        <option value="40" label="40°C"></option>
+        <option value="50" label="50°C"></option>
+      </datalist>
+    </div>
+    <div class="side-info">
+      <div class="today-box">
+        <div class="weather-icon" id="weather-icon">🌡️</div>
+        <div class="condition" id="condition">—</div>
+        <button id="refresh-btn" title="Aggiorna">↻</button>
+      </div>
+      <div class="forecast-box">
+        <table class="forecast-table">
+          <thead>
+            <tr>
+              <th>Giorno</th>
+              <th title="Condizione">☁️</th>
+              <th title="Temperatura massima">Max</th>
+              <th title="Temperatura minima">Min</th>
+              <th title="Precipitazioni">💧mm</th>
+              <th title="Vento massimo">💨km/h</th>
+            </tr>
+          </thead>
+          <tbody id="forecast-body">
+            <tr><td colspan="6" class="forecast-loading">Caricamento…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div id="last-update"></div>
+    <div class="offline-badge" id="offline-badge">📡 Offline</div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
